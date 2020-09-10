@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.Register {
+  width: 500px;
+}
+
+.CenterContainer {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
