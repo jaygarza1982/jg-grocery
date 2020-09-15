@@ -3,6 +3,7 @@ class User {
         this.fullname = null;
         this.username = null;
         this.password = null;
+        this.passwordConfirm = null;
         this.hash = null;
         this.salt = null;
     }

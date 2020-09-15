@@ -18,6 +18,7 @@ router.post('/user/register', (req, res) => {
     newUser.fullname = 'test fullname';
     newUser.username = req.body.username;
     newUser.password = req.body.password;
+    newUser.passwordConfirm = req.body.passwordConfirm;
     let regService = new RegisterService(newUser);
     regService.register(res);
 });
