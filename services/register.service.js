@@ -1,5 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const mongoConfig = require('../config/mongo.config')
+const HasherService = require('../services/hasher.service');
+const UserModel = require('../models/user.model');
 
 class RegisterService {
     constructor(user) {
@@ -18,15 +20,23 @@ class RegisterService {
                 if (results == null) {
                     // Only insert if passwords match
                     if (this.user.password === this.user.passwordConfirm) {
-                        collection.insertOne(this.user, (err, res) => {
+
+                        // Modify user for insert
+                        let hashService = new HasherService();
+                        let newUser = new UserModel(this.user.username);
+                        newUser.hash = hashService.genHash(this.user.password);
+
+                        // Insert the user and return proper response after registration
+                        collection.insertOne(newUser, (err, res) => {
                             if (err != null) {
                                 console.log(err);
                             }
                             // We were able to insert successfully
                             else {
-                                response.json(this.user);
+                                response.json(newUser);
                             }
                         });
+
                     }
                     else {
                         response.send('Passwords do not match.');

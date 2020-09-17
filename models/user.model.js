@@ -1,12 +1,9 @@
-class User {
+class UserModel {
     constructor(username) {
         this.fullname = null;
-        this.username = null;
-        this.password = null;
-        this.passwordConfirm = null;
+        this.username = username;
         this.hash = null;
-        this.salt = null;
     }
 }
 
-module.exports = User;
+module.exports = UserModel;

@@ -5,12 +5,29 @@ class LandingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {  };
+        this.linkStyle = { marginRight: 10}
     }
     render() {
         return (
-            <div className="Background">
-                <Link to="/login"><button class="btn btn-primary">Login</button></Link>
-                <Link to="/register"><button class="btn btn-primary">Register</button></Link>
+            <div className="NavBar">
+                <div className="container-fluid">
+                    <div className="text-center row">
+                        <div className="col-1" style={this.linkStyle}>
+                            <Link to="/login">
+                                <div>
+                                    Login
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="col-1" style={this.linkStyle}>
+                            <Link to="/register">
+                                <div>
+                                    Register
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
