@@ -15,13 +15,13 @@ class Register extends Component {
                     <form className="form" method="post" action="/user/register">
                         <div className="form-group">
                             <label htmlFor="jg-username">Username</label>
-                            <input type="text" autocomplete="off" className="form-control" id="jg-username" name="username" placeholder="Username" />
+                            <input type="text" autoComplete="off" className="form-control" id="jg-username" name="username" placeholder="Username" />
 
                             <label htmlFor="jg-password">Password</label>
                             <input type="password" className="form-control" id="jg-password" name="password" placeholder="Password"/>
 
                             <label htmlFor="jg-password">Password confirm</label>
-                            <input type="password" className="form-control" id="jg-password" name="passwordConfirm" placeholder="Password confirm"/>
+                            <input type="password" className="form-control" id="jg-password-confirm" name="passwordConfirm" placeholder="Password confirm"/>
 
                             <input type="submit" style={{marginTop: 15}} className="btn btn-primary" value="Register"/>
                         </div>

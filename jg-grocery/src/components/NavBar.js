@@ -5,7 +5,7 @@ class LandingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {  };
-        this.linkStyle = { marginRight: 10}
+        this.linkStyle = { marginRight: 50}
     }
     render() {
         return (
@@ -23,6 +23,13 @@ class LandingPage extends Component {
                             <Link to="/register">
                                 <div>
                                     Register
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="col-1" style={this.linkStyle}>
+                            <Link to="/home">
+                                <div>
+                                    Home
                                 </div>
                             </Link>
                         </div>

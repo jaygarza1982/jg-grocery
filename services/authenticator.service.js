@@ -8,7 +8,7 @@ class AuthenticatorService {
         this.client = new MongoClient(mongoConfig.url);
     }
 
-    login (response) {
+    login (request, response) {
         MongoClient.connect(mongoConfig.url, (err, client) => {
             let dbObj = client.db(mongoConfig.DBName);
             
@@ -22,7 +22,8 @@ class AuthenticatorService {
                     let hasherService = new HasherService();
                     if (hasherService.check(this.user.password, user.hash)) {
                         console.log('Successful login from ' + this.user.username);
-                        response.json(user);
+                        request.session.user = user;
+                        response.redirect('/home');
                     }
                     else {
                         console.log('Failed login for ' + this.user.username);

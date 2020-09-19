@@ -15,7 +15,7 @@ class Login extends Component {
                     <form className="form" method="post" action="/user/login">
                         <div className="form-group">
                             <label htmlFor="jg-username">Username</label>
-                            <input type="text" autocomplete="off" className="form-control" id="jg-username" name="username" placeholder="Username" />
+                            <input type="text" autoComplete="off" className="form-control" id="jg-username" name="username" placeholder="Username" />
 
                             <label htmlFor="jg-password">Password</label>
                             <input type="password" className="form-control" id="jg-password" name="password" placeholder="Password"/>
