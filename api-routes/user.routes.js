@@ -2,6 +2,7 @@ const express = require('express');
 const PotentialUserModel = require('../models/potential.user.model');
 const RegisterService = require('../services/register.service');
 const AuthenticatorService = require('../services/authenticator.service');
+const HomeService = require('../services/home.service');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
@@ -17,11 +18,8 @@ router.use(session({
 }));
 
 router.get('/user/home', (req, res) => {
-    console.log('Cookie dump below');
-    console.log(req.session);
-    // console.log(req.session);
-    console.log('End cookie dump');
-    res.json({data: 'Should return data about the users home page. Username: ' + req.session.user.username})
+    let homeService = new HomeService(req.session);
+    homeService.getHome(res);
 });
 
 router.post('/user/register', (req, res) => {

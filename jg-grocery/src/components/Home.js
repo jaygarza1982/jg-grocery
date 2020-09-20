@@ -8,17 +8,32 @@ class Home extends Component {
 
     async componentDidMount() {
         let fetched = await fetch('/user/home');
-        let json = await fetched.text();
-        console.log(json);
-        this.setState({pageInfo: json});
+        let json = await fetched.json();
+        this.setState({username: json.username, products: json.products});
     }
 
     render() {
         return (
             <div className="Home">
-                Welcome, username!
                 <div>
-                    {this.state.pageInfo}
+                    {
+                        this.state.username ? (
+                        <div>Welcome, {this.state.username}!</div>
+                        ) : (<div>Please login.</div>)
+                    }
+                </div>
+                <div>
+                    {
+                        this.state.products ? (
+                            this.state.products.map((p, index) => {
+                                return (
+                                    <div key={p.id} className="product">
+                                        <div>{p.name}</div>
+                                    </div>
+                                )
+                            })
+                        ) : <div>Loading products...</div>
+                    }
                 </div>
             </div>
         );

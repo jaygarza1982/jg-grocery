@@ -17,8 +17,6 @@ class AuthenticatorService {
             collection.findOne({username: this.user.username}, (err, user) => {
                 // If a user exists with this username
                 if (user != null) {
-                    console.log(user);
-
                     let hasherService = new HasherService();
                     if (hasherService.check(this.user.password, user.hash)) {
                         console.log('Successful login from ' + this.user.username);
