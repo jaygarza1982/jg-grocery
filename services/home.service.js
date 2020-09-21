@@ -21,6 +21,14 @@ class HomeService {
                         name: 'product3 name here',
                         id: 'product3 id here',
                     },
+                    {
+                        name: 'product4 name here',
+                        id: 'product4 id here',
+                    },
+                    {
+                        name: 'product5 name here',
+                        id: 'product5 id here',
+                    },
                 ],
             });
         }

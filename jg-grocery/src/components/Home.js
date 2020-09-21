@@ -14,25 +14,32 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="Home">
+            <div className="container-fluid Home">
                 <div>
                     {
                         this.state.username ? (
-                        <div>Welcome, {this.state.username}!</div>
+                        <h1>Welcome, {this.state.username}!</h1>
                         ) : (<div>Please login.</div>)
                     }
                 </div>
-                <div>
+                <div className="row Products">
                     {
                         this.state.products ? (
                             this.state.products.map((p, index) => {
                                 return (
-                                    <div key={p.id} className="product">
-                                        <div>{p.name}</div>
+                                    <div key={p.id} className="col-6 col-md-3 col-xl-2 Product">
+                                        <div className="ProductCard">
+                                            <div>{p.name}</div>
+                                            <button className="ProductCard__CartBtn btn btn-primary">Add to cart</button>
+                                        </div>
                                     </div>
                                 )
                             })
-                        ) : <div>Loading products...</div>
+                        ) : (
+                            <div className="col-12">
+                                <a href="/login">Login</a>
+                            </div>
+                        )
                     }
                 </div>
             </div>

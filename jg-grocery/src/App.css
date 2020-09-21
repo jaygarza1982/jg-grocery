@@ -2,7 +2,14 @@
   text-align: center;
   background-image: url('/images/plant-bg.jpg');
   background-position: center;
+  /* background-repeat: no-repeat; */
+  /* background-size: auto; */
+  background-size: cover;
   height: 100vh;
+}
+
+body {
+  font-size: 1.2rem;
 }
 
 .Register {
@@ -13,4 +20,23 @@
   text-align: center;
   display: grid;
   justify-content: center;
+}
+
+.Product {
+  margin-top: 15px;
+}
+
+.ProductCard {
+  border-radius: 15px;
+  background-color: beige;
+  height: 145px;
+  padding: 10px;
+  position: relative;
+}
+
+.ProductCard__CartBtn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
