@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Product from './Product';
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -27,12 +29,12 @@ class Home extends Component {
                         this.state.products ? (
                             this.state.products.map((p, index) => {
                                 return (
-                                    <div key={p.id} className="col-6 col-md-3 col-xl-2 Product">
-                                        <div className="ProductCard">
-                                            <div>{p.name}</div>
-                                            <button className="ProductCard__CartBtn btn btn-primary">Add to cart</button>
-                                        </div>
-                                    </div>
+                                    <Product 
+                                        key={p.id}
+                                        price={'$10.99'}
+                                        name={p.name}
+                                        size={'12oz'}
+                                    />
                                 )
                             })
                         ) : (

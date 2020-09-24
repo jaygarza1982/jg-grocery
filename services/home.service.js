@@ -6,11 +6,15 @@ class HomeService {
 
     getHome(response) {
         if (this.session.user) {
+            const reader = require('./data.reader.service');
+            let r = new reader('../assets/data.csv');
+            r.read();
+            console.log(r);
             response.json({
                 username: this.session.user.username,
                 products: [
                     {
-                        name: 'product1 name here',
+                        name: 'product1 name hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
                         id: 'product1 id here',
                     },
                     {
