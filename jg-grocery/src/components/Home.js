@@ -31,15 +31,15 @@ class Home extends Component {
                                 return (
                                     <Product 
                                         key={p.id}
-                                        price={'$10.99'}
-                                        name={p.name}
-                                        size={'12oz'}
+                                        price={p.price}
+                                        description={p.description}
+                                        size={p.size}
                                     />
                                 )
                             })
                         ) : (
                             <div className="col-12">
-                                <a href="/login">Login</a>
+                                Loading...
                             </div>
                         )
                     }
